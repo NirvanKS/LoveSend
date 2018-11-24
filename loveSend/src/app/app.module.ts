@@ -8,16 +8,27 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DeviceMotion, DeviceMotionAccelerationData } from '@ionic-native/device-motion/ngx';
+import { AngularFireModule } from 'angularfire2';
+import { environment } from '../environments/environment';
+import { HttpModule } from '@angular/http';
+import { AngularFireDatabase } from 'angularfire2/database';
+import { SendFeelsProviderPipe } from './send-feels-provider.pipe';
+
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, SendFeelsProviderPipe],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
+  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, AngularFireModule.initializeApp(environment.firebase),
+    HttpModule, AngularFireDatabase],
   providers: [
     StatusBar,
     SplashScreen,
+    DeviceMotion,
+
+
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

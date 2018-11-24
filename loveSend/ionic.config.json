@@ -1,5 +1,7 @@
 {
   "name": "loveSend",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }
