@@ -12,7 +12,7 @@ import { DeviceMotion, DeviceMotionAccelerationData } from '@ionic-native/device
 import { AngularFireModule } from 'angularfire2';
 import { environment } from '../environments/environment';
 import { HttpModule } from '@angular/http';
-import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { SendFeelsProviderPipe } from './send-feels-provider.pipe';
 
 
@@ -20,7 +20,7 @@ import { SendFeelsProviderPipe } from './send-feels-provider.pipe';
   declarations: [AppComponent, SendFeelsProviderPipe],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, AngularFireModule.initializeApp(environment.firebase),
-    HttpModule, AngularFireDatabase],
+    HttpModule, AngularFireDatabaseModule],
   providers: [
     StatusBar,
     SplashScreen,

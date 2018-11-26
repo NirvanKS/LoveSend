@@ -5,13 +5,21 @@
 </ion-header>
 
 <ion-content>
+  <ion-button shape="round" color="primary" fill="outline" (click) = "this.sash()">Hello World</ion-button>
   <!-- <div id="background"></div>
   <div id="chest">
     <div class="heart left side top"></div>
     <div class="heart center">&hearts;</div>
     <div class="heart right side"></div>
   </div> -->
-  <div class="ghost">
+  <div id="background"></div>
+  <div id="chest">
+    <div [class]="this.div1"></div>
+    <div [class]="this.div2">&hearts;</div>
+    <div [class]="this.div3"></div>
+  </div>
+  
+  <!-- <div class="ghost">
     <div class="body">
       <div class="face">
         <div class="eye left"></div>
@@ -31,6 +39,6 @@
       </div>
     </div>
     <div class="shadow"></div>
-  </div>
+  </div> -->
 
 </ion-content>
