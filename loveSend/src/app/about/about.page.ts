@@ -6,17 +6,17 @@ import { Component } from '@angular/core';
   styleUrls: ['about.page.scss']
 })
 export class AboutPage {
-  cssClass :any = "heart";
+  cssClass: any = "heart";
   div1 = "heart left side top";
   div2 = "heart center"
   div3 = "heart right side"
-  sash(){
+  sash() {
     console.log("button was clicked");
     this.cssClass = "heart2x";
     this.div1 = "heart2x left side top";
     this.div2 = "heart2x center"
     this.div3 = "heart2x right side"
-    
+
   }
 
   //next steps:

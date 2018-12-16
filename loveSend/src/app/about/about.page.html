@@ -5,20 +5,20 @@
 </ion-header>
 
 <ion-content>
-  <ion-button shape="round" color="primary" fill="outline" (click) = "this.sash()">Hello World</ion-button>
+  <ion-button shape="round" color="primary" fill="outline" (click)="this.sash()">Hello World</ion-button>
   <!-- <div id="background"></div>
   <div id="chest">
     <div class="heart left side top"></div>
     <div class="heart center">&hearts;</div>
     <div class="heart right side"></div>
   </div> -->
-  <div id="background"></div>
-  <div id="chest">
+  <div class="background"></div>
+  <div class="chest">
     <div [class]="this.div1"></div>
     <div [class]="this.div2">&hearts;</div>
     <div [class]="this.div3"></div>
   </div>
-  
+
   <!-- <div class="ghost">
     <div class="body">
       <div class="face">
