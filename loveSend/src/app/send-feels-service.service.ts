@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { DeviceMotion, DeviceMotionAccelerationData } from '@ionic-native/device-motion/ngx';
 import { NavController, Platform } from '@ionic/angular';
+import { AngularFireDatabase } from 'angularfire2/database';
+
 
 
 @Injectable({
@@ -14,7 +16,7 @@ export class SendFeelsServiceService {
   private moveCounter: number = 0;
   private scale: number = 0;
 
-  constructor(private deviceMotion: DeviceMotion, private navController: NavController, private platform: Platform) { }
+  constructor(private deviceMotion: DeviceMotion, private navController: NavController, private platform: Platform, public afd: AngularFireDatabase) { }
 
 
   async shake() {
@@ -37,14 +39,16 @@ export class SendFeelsServiceService {
           var milliscale = deltaX + deltaY + deltaZ;
           console.log("counting" + milliscale);
           this.scale += milliscale;
-          console.log("SCALE" + this.scale);
           this.moveCounter++;
         } else {
           this.moveCounter = Math.max(0, --this.moveCounter);
         }
 
-        if (this.moveCounter > 5) {
-          console.log('SHAKE');
+        if (this.moveCounter > 6) {
+          console.log('SHAKE - ', this.scale);
+          this.afd.object('/Sent/').set(this.scale);
+
+          //this.afd.object('/Sent/').remove();
 
           this.moveCounter = 0;
           this.cancelSubscription();
