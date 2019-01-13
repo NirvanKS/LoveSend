@@ -10,6 +10,12 @@ export class AboutPage {
   div1 = "heart left side top";
   div2 = "heart center"
   div3 = "heart right side"
+
+  constructor() {
+
+  }
+
+
   sash() {
     console.log("button was clicked");
     this.cssClass = "heart2x";
@@ -18,6 +24,11 @@ export class AboutPage {
     this.div3 = "heart2x right side"
 
   }
+
+  ionViewWillEnter() {
+
+  }
+
 
   //next steps:
   //manually try practice device motion if possible. understand the code first.

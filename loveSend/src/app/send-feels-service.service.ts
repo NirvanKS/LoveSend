@@ -20,7 +20,7 @@ export class SendFeelsServiceService {
 
 
   async shake() {
-    this.platform.ready().then(() => {
+    await this.platform.ready().then(() => {
       // Watch device acceleration
       this.subscription = this.deviceMotion.watchAcceleration({ frequency: 300 }).subscribe((acceleration: DeviceMotionAccelerationData) => {
         if (!this.lastX) {
